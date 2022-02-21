@@ -123,30 +123,6 @@
   margin-top: 15px;
 }
 
-.custom-upload {
-  [type='file'] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    transition: ease all 0.5s;
-  }
-  [type='file'] + div {
-    cursor: pointer;
-    transition: ease all 0.5s;
-  }
-
-  /* CHECKED STYLES */
-  [type='file']:checked + div {
-    border: 1px solid var(--green-color);
-    transition: ease all 0.5s;
-    padding: 2px 16px;
-    background: var(--green-color);
-    color: var(--white-color);
-    border-radius: 2px;
-  }
-}
-
 @keyframes load8 {
   0% {
     transform: rotate(0deg);
@@ -438,14 +414,9 @@
 
 }
 
-/// leave min styles
-.actionStyle {
-  display: flex;
-  justify-content: center;
-  &.cursor {
-    cursor: pointer;
-  }
-  span {
-    padding-right: 4px;
+.activeColor {
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-right: 4px solid #fff;
   }
 }

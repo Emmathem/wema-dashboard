@@ -15,8 +15,8 @@ const Sidebar = () => {
         </LogoContainer>
         <NavItemsContainer>
             {navItems.map((item, index) => (
-                <NavItem key={index} onClick={() => setActiveIcon(item.title)}>
-                    <NavIcon style={{ color: item.title === activeIcon && '#3773f5' }}>
+                <NavItem key={index} onClick={() => setActiveIcon(item.title)} style={{ background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)', borderRight: item.title === activeIcon && '4px solid #fff' }}>
+                    <NavIcon>
                         {item.icon}
                     </NavIcon>
                     <NavTitle>{item.title}</NavTitle>
