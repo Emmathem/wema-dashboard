@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { FiSearch } from 'react-icons/fi';
 import { HiBell } from 'react-icons/hi';
 import ProfileImage from '../assets/images/profileImage.png'
-
+import { Select } from 'antd';
+const { Option } = Select;
 const Header = () => {
   return (
     <Wrapper>
@@ -11,11 +12,16 @@ const Header = () => {
       <RightNavItems>
         <SearchInput>
           <SearchInputIcon><FiSearch /></SearchInputIcon>
-          <input className='input-search' placeholder='Enter Keyboard' />
+          <input className='input-search' placeholder='Enter Keyboards...' />
         </SearchInput>
+        <SelectContainer>
+          <Select style={{ width: '70px', height: '40px' }} defaultValue="EN" size='large'>
+            <Option value="en">EN</Option>
+          </Select>
+        </SelectContainer>
         <WrapperCircle><HiBell /></WrapperCircle>
         <WrapperCircle><HiBell /></WrapperCircle>
-        <WrapperCircle><img src={ProfileImage} alt="profile image" /></WrapperCircle>
+        <WrapperCircle><img src={ProfileImage} alt="profile" /></WrapperCircle>
       </RightNavItems>
     </Wrapper>
   )
@@ -29,6 +35,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     background: #fff;
+    transition: ease all 0.5s;
 `;
 
 const Title = styled.div`
@@ -46,16 +53,40 @@ const RightNavItems = styled.div`
 const SearchInput = styled.div`
   display: flex;
   position: relative;
+  align-items: center;
   border-radius: 6px;
+  width: calc(20rem - 10px);
+  margin-right: 5rem;
+  overflow: hidden;
+  transition: ease all 0.5s;
+  background: #FAFAFA;
   .input-search {
     background: #FAFAFA;
-    height: 40px;
+    height: 45px;
     border: none;
+    width: 100%;
+    padding: 5px 1rem;
+    color: #000;
+    font-size: 1rem;
+    &::placeholder {
+      font-size: 1rem;
+      color: #e5e5e5;
+      font-weight: 800;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+    }
   }
 `
 
 const SearchInputIcon = styled.div`
-  position: absolute;
+  padding: 0 7px;
+  left: 0;
+  svg {
+    font-size: 2rem;
+    stroke: #e5e5e5;
+  }
 `;
 
 const WrapperCircle = styled.div`
@@ -66,9 +97,9 @@ const WrapperCircle = styled.div`
   align-items: center;
   border-radius: 50%;
   background: #FAFAFA;
-  border: 1px solid #000;
   overflow: hidden;
-  margin-right: 2rem;
+  margin: 0 0.8rem;
+  transition: ease all 0.5s;
   svg {
     fill: #D6D7E3;
     font-size: 1.5rem;
@@ -77,5 +108,13 @@ const WrapperCircle = styled.div`
     object-fit: contain;
     width: 100%;
     height: 100%;
+  }
+`;
+
+const SelectContainer = styled.div`
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border: none;
+    font-weight: 800;
+    font-size: 1.2rem;
   }
 `;
