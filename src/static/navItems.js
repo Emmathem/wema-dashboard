@@ -1,7 +1,6 @@
 import {
     AiOutlinePieChart,
     AiOutlinePlusCircle,
-    AiOutlineGift,
   } from 'react-icons/ai'
   // import { BiTrendingUp } from 'react-icons/bi'
   import { RiCoinsLine } from 'react-icons/ri'
