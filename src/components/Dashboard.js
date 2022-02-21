@@ -24,7 +24,7 @@ const Dashboard = () => {
             </SectionContainer>
           </Col>
           <Col xs={24} lg={6} xl={6}>
-            <SectionContainer>
+            <SectionContainer background='#990D81'>
               <DashboardBarGraph />
             </SectionContainer>
           </Col>
@@ -32,6 +32,7 @@ const Dashboard = () => {
         <Row gutter={24}>
           <Col xs={24} lg={18} xl={18}>
             <SectionContainer>
+              <SectionTitle>Recent Requests</SectionTitle>
               <DashboardTableRecord />
             </SectionContainer>
           </Col>
@@ -56,7 +57,15 @@ const CardContainer = styled.div`
 const SectionContainer = styled.div`
   transition: ease all 0.5ms;
   margin-bottom: 14px;
-  background: #fff;
+  background: ${(props) => props.background || '#fff'};
   padding: 5px;
   border-radius: 7px;
+`
+
+const SectionTitle = styled.div`
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 15px;
+  padding: 5px 15px;
 `
