@@ -5,7 +5,7 @@ import { formatNumber } from '../../helpers/functions';
 
 export const DashboardCard = ({ background, title, count }) => {
     return (
-        <CardHolder className='shadow-lg bg-white t-rounded-lg'>
+        <CardHolder className='t-bg-white t-rounded-lg'>
             <BaseCircle background={background}></BaseCircle>
             <CardContent>
                 <h2>{formatNumber(count)}</h2>
@@ -21,12 +21,12 @@ DashboardCard.propTypes = {};
 export default DashboardCard;
 
 const CardHolder = styled.div`
-    background: #fff;
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.06);
     padding: 1.2rem 15px;
     display: flex;
     color: #000;
     height: auto;
-transition: ease all 0.5s;
+    transition: ease all 0.5s;
 `;
 
 const CardContent = styled.div`

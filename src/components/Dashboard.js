@@ -19,19 +19,25 @@ const Dashboard = () => {
         </CardContainer>
         <Row gutter={24}>
           <Col xs={24} lg={18} xl={18}>
-            <SectionContainer>
+            <SectionContainer className='t-shadow-md'>
+              <SectionTitle>User Inflow Statistics</SectionTitle>
               <DashboardGraph />
             </SectionContainer>
           </Col>
           <Col xs={24} lg={6} xl={6}>
-            <SectionContainer background='#990D81'>
+            <SectionContainer className='t-shadow-md' background='#990D81'>
               <DashboardBarGraph />
+
+              <div className="t-px-4 t-py-4">
+                <span className="t-font-semibold t-text-white t-text-xl">New Users</span> <br />
+                (+23%) than last week
+              </div>
             </SectionContainer>
           </Col>
         </Row>
         <Row gutter={24}>
           <Col xs={24} lg={18} xl={18}>
-            <SectionContainer>
+            <SectionContainer className='t-shadow-md'>
               <SectionTitle>Recent Requests</SectionTitle>
               <DashboardTableRecord />
             </SectionContainer>
@@ -63,7 +69,7 @@ const SectionContainer = styled.div`
 `
 
 const SectionTitle = styled.div`
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.5rem;
   color: #000;
   margin-bottom: 15px;

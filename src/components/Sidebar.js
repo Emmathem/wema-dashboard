@@ -40,7 +40,6 @@ export default Sidebar;
 
 const Wrapper = styled.div`
     height: calc(100vh);
-    border-right: 1px solid #282b2f;
     width: calc(20rem - 16px - 16px);
     padding:  0 1rem;
     background: #990D81;
@@ -57,7 +56,7 @@ const LogoContainer = styled.div`
 `;
 
 const NavItemsContainer = styled.div`
-    margin-top: 3rem;
+    margin-top: 2rem;
 
     &:hover {
         cursor: pointer;
@@ -70,7 +69,8 @@ const NavItem = styled.div`
     font-size: 1.1rem;
     font-weight: 500;
     border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    transition: ease all 0.5s;
     height: 3.4rem;
     color: #fff;
 
