@@ -14,24 +14,26 @@ const Sidebar = () => {
         history.push(item.route);
     }
 
-    return <Wrapper>
-        <LogoContainer>
-            <Logo>
-                <img src={WemaLogo} alt="logo" />
-                {/* <Image src={CoinbaseLogo} alt="logo" /> */}
-            </Logo>
-        </LogoContainer>
-        <NavItemsContainer>
-            {navItems.map((item, index) => (
-                <NavItem key={index} onClick={() => getRigthLink(item)} style={{ background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)', borderRight: item.title === activeIcon && '4px solid #fff' }}>
-                    <NavIcon>
-                        {item.icon}
-                    </NavIcon>
-                    <NavTitle>{item.title}</NavTitle>
-                </NavItem>
-            ))}
-        </NavItemsContainer>
-    </Wrapper>;
+    return (
+        <Wrapper className='hidden'>
+            <LogoContainer>
+                <Logo>
+                    <img src={WemaLogo} alt="logo" />
+                    {/* <Image src={CoinbaseLogo} alt="logo" /> */}
+                </Logo>
+            </LogoContainer>
+            <NavItemsContainer>
+                {navItems.map((item, index) => (
+                    <NavItem key={index} onClick={() => getRigthLink(item)} style={{ background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)', borderRight: item.title === activeIcon && '4px solid #fff' }}>
+                        <NavIcon>
+                            {item.icon}
+                        </NavIcon>
+                        <NavTitle>{item.title}</NavTitle>
+                    </NavItem>
+                ))}
+            </NavItemsContainer>
+        </Wrapper>
+    );
 };
 
 export default Sidebar;
@@ -42,6 +44,12 @@ const Wrapper = styled.div`
     width: calc(20rem - 16px - 16px);
     padding:  0 1rem;
     background: #990D81;
+    transition: ease all 0.5s;
+    @media (max-width: 768px) {
+        width: 0rem;
+        padding: 0;
+        transition: ease all 0.5s;
+    }
 `;
 
 const LogoContainer = styled.div`
