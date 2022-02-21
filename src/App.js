@@ -1,12 +1,11 @@
+import AppRoutes from './AppRoutes';
 import './assets/styles/main.scss';
 import Sidebar from './components/Sidebar';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Sidebar />
-    </div>
-  );
+    <AppRoutes />
+  )
 }
 
 export default App;
