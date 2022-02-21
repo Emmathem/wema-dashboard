@@ -4,12 +4,18 @@ import { FiSearch } from 'react-icons/fi';
 import { HiBell } from 'react-icons/hi';
 import { BsFillSunFill } from 'react-icons/bs';
 import ProfileImage from '../assets/images/profileImage.png'
+import WemaLogo from '../assets/images/wema-logo.svg';
 import { Select } from 'antd';
 const { Option } = Select;
 const Header = () => {
   return (
     <Wrapper>
-      <Title>Dashboard</Title>
+      <Title>
+        <HeaderSvg>
+          <img src={WemaLogo} alt="logo" />
+        </HeaderSvg>
+        Dashboard
+      </Title>
       <RightNavItems>
         <SearchInput>
           <SearchInputIcon><FiSearch /></SearchInputIcon>
@@ -44,6 +50,27 @@ const Title = styled.div`
     font-weight: 700;
     flex: 1;
     color: #000;
+    display: flex;
+    align-items: center;
+`;
+
+const HeaderSvg = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #990D81;
+  margin-right: 14px;
+  transition: ease all 0.5s;
+  img {
+   width: 25px;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const RightNavItems = styled.div`

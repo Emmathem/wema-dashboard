@@ -22,7 +22,8 @@
     "start": "PORT=3300 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tailwind-config-viewer": "tailwind-config-viewer -o"
   },
   "eslintConfig": {
     "extends": [
@@ -43,9 +44,11 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.23",
+    "autoprefixer": "^10.4.2",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.4.6",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
-    "node-sass": "^4.14.1"
+    "tailwindcss": "^3.0.23"
   }
 }

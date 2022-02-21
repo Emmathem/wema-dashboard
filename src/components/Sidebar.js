@@ -15,7 +15,7 @@ const Sidebar = () => {
     }
 
     return (
-        <Wrapper className='hidden'>
+        <Wrapper className='t-hidden lg:t-block transition'>
             <LogoContainer>
                 <Logo>
                     <img src={WemaLogo} alt="logo" />
@@ -45,11 +45,11 @@ const Wrapper = styled.div`
     padding:  0 1rem;
     background: #990D81;
     transition: ease all 0.5s;
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         width: 0rem;
         padding: 0;
         transition: ease all 0.5s;
-    }
+    } */
 `;
 
 const LogoContainer = styled.div`
