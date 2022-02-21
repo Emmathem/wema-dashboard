@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FiSearch } from 'react-icons/fi';
+import { HiBell } from 'react-icons/hi';
+import ProfileImage from '../assets/images/profileImage.png'
 
 const Header = () => {
   return (
     <Wrapper>
       <Title>Dashboard</Title>
-      <ButtonContainer>
-        <WalletLink>
-          <WalletLinkTitle>Wallet Connected</WalletLinkTitle>
-          <WalletAddress>
-            {/* {walletAddress.slice(0, 7)}...{walletAddress.slice(35)} */}
-          </WalletAddress>
-        </WalletLink>
-        {/* <Button style={{ backgroundColor: '#3773f5', color: '#000', marginRight: '1rem' }}>Buy / Sell</Button> */}
-        {/* <Button color='#fff'>Send / Receive</Button> */}
-        {/* <Button onClick={() => disconnectWallet('injected')} style={{ backgroundColor: '#ed3105', border: '1px solid #ed3105', color: '#fff', marginLeft: '1rem' }}>Logout</Button> */}
-      </ButtonContainer>
+      <RightNavItems>
+        <SearchInput>
+          <SearchInputIcon><FiSearch /></SearchInputIcon>
+          <input className='input-search' placeholder='Enter Keyboard' />
+        </SearchInput>
+        <WrapperCircle><HiBell /></WrapperCircle>
+        <WrapperCircle><HiBell /></WrapperCircle>
+        <WrapperCircle><img src={ProfileImage} alt="profile image" /></WrapperCircle>
+      </RightNavItems>
     </Wrapper>
   )
 }
@@ -37,31 +38,44 @@ const Title = styled.div`
     color: #000;
 `;
 
-const ButtonContainer = styled.div`
+const RightNavItems = styled.div`
     display: flex;
-    /* align-items: center; */
+    align-items: center;
 `
 
-const WalletLink = styled.div`
-    font-size: 0.8rem;
-    border: 1px solid #282b2f;
-    border-radius: 50rem;
-    font-size: 1.2rem;
-    margin-right: 1rem;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+const SearchInput = styled.div`
+  display: flex;
+  position: relative;
+  border-radius: 6px;
+  .input-search {
+    background: #FAFAFA;
+    height: 40px;
+    border: none;
+  }
+`
+
+const SearchInputIcon = styled.div`
+  position: absolute;
 `;
 
-const WalletLinkTitle = styled.div`
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-    color: #27ad75;
-    font-weight: 600;
-`
-
-const WalletAddress = styled.div`
-    font-size: 0.8rem;
+const WrapperCircle = styled.div`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #FAFAFA;
+  border: 1px solid #000;
+  overflow: hidden;
+  margin-right: 2rem;
+  svg {
+    fill: #D6D7E3;
+    font-size: 1.5rem;
+  }
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
 `;

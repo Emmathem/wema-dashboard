@@ -1,11 +1,19 @@
 // import Image from 'next/image';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import WemaLogo from '../assets/images/wema-logo.svg';
 import { navItems } from '../static/navItems';
 
 const Sidebar = () => {
     const [activeIcon, setActiveIcon] = useState(navItems[0].title);
+    const history = useHistory();
+
+    const getRigthLink = (item) => {
+        setActiveIcon(item.title);
+        history.push(item.route);
+    }
+
     return <Wrapper>
         <LogoContainer>
             <Logo>
@@ -15,7 +23,7 @@ const Sidebar = () => {
         </LogoContainer>
         <NavItemsContainer>
             {navItems.map((item, index) => (
-                <NavItem key={index} onClick={() => setActiveIcon(item.title)} style={{ background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)', borderRight: item.title === activeIcon && '4px solid #fff' }}>
+                <NavItem key={index} onClick={() => getRigthLink(item)} style={{ background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)', borderRight: item.title === activeIcon && '4px solid #fff' }}>
                     <NavIcon>
                         {item.icon}
                     </NavIcon>

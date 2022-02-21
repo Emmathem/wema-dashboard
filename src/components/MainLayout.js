@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
       <Sidebar />
       <MainWrapper>
         <Header />
-        <ChildrenWrapper>
+        <ChildrenWrapper data-aos="fade-up">
           {children}
         </ChildrenWrapper>
       </MainWrapper>
