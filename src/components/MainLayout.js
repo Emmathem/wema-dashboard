@@ -6,25 +6,26 @@ import AOS from 'aos';
 
 const MainLayout = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const sidebarDrawer = useRef(null);
+    const sidebarRef = useRef(null);
 
     const openDrawerOnMobile = () => {
+        console.log(isOpen);
         setIsOpen(!isOpen);
     };
 
-    useEffect(() => {
-        const drawerEffectClick = e => {
-            if (sidebarDrawer.current !== null && !sidebarDrawer.current.contains(e.target)) {
-                setIsOpen(!isOpen);
-            }
-        };
-        if (setIsOpen) {
-            window.addEventListener('click', drawerEffectClick);
-        }
-        return () => {
-            window.removeEventListener('click', drawerEffectClick);
-        };
-    }, [setIsOpen]);
+    // useEffect(() => {
+    //     const drawerEffectClick = e => {
+    //         if (sidebarRef.current !== null && !sidebarRef.current.contains(e.target)) {
+    //             setIsOpen(!isOpen);
+    //         }
+    //     };
+    //     if (setIsOpen) {
+    //         window.addEventListener('click', drawerEffectClick);
+    //     }
+    //     return () => {
+    //         window.removeEventListener('click', drawerEffectClick);
+    //     };
+    // }, [setIsOpen]);
 
     useEffect(() => {
         AOS.init({
@@ -35,7 +36,7 @@ const MainLayout = ({ children }) => {
 
     return (
         <Wrapper>
-            <Sidebar isOpen={isOpen} openDrawerOnMobile={openDrawerOnMobile} sidebarDrawer={sidebarDrawer} />
+            <Sidebar isOpen={isOpen} openDrawerOnMobile={openDrawerOnMobile} sidebarRef={sidebarRef} />
             <MainWrapper>
                 <Header openDrawer={openDrawerOnMobile} />
                 <ChildrenWrapper data-aos="fade-up">{children}</ChildrenWrapper>
@@ -50,23 +51,27 @@ const MainWrapper = styled.div`
     background: #e5e5e5;
     flex: 1;
     transition: ease all 0.5s;
+    margin-left: 18rem;
+    @media (max-width: 449px) {
+        margin-left: 0;
+    }
 `;
 
 const Wrapper = styled.div`
-    width: 100vw;
+    //width: 100vw;
     height: 100vh;
-    background-color: #0a0b0d;
+    //background-color: #0a0b0d;
     color: white;
     display: flex;
-    overflow: hidden;
+    //overflow: hidden;
 `;
 
 const ChildrenWrapper = styled.div`
     padding: 1.5rem 2rem;
     transition: ease all 0.5s;
     max-height: calc(100vh - 64px);
-    overflow: hidden;
-    overflow-y: scroll;
+    //overflow: hidden;
+    //overflow-y: scroll;
     ::-webkit-scrollbar {
         display: none;
     }

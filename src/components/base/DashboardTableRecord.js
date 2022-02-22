@@ -65,7 +65,12 @@ const DashboardTableRecord = () => {
     ];
     return (
         <TableContainer>
-            <Table columns={requestCols} dataSource={RecentRequests} rowKey={record => record.id} />
+            <Table
+                columns={requestCols}
+                dataSource={RecentRequests}
+                rowKey={record => record.id}
+                style={{ overflowX: 'auto' }}
+            />
         </TableContainer>
     );
 };

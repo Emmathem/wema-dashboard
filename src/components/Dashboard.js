@@ -16,7 +16,7 @@ const Dashboard = () => {
     return (
         <>
             <MainLayout>
-                <CardContainer>
+                <Row gutter={24} className="t-mb-4">
                     <DashboardCard background={'#2F49D1'} title="Pending Requests" count="948494" icon={PendingIcon}>
                         <CardFooter>
                             <span className="rise">
@@ -49,7 +49,7 @@ const Dashboard = () => {
                             <span>Last month</span>
                         </CardFooter>
                     </DashboardCard>
-                </CardContainer>
+                </Row>
                 <Row gutter={24}>
                     <Col xs={24} lg={18} xl={18}>
                         <SectionContainer className="t-shadow-md">
@@ -85,13 +85,13 @@ export default Dashboard;
 
 // export const DashboardWrapper = styled.div``
 
-const CardContainer = styled.div`
-    display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    transition: ease all 0.5ms;
-    margin-bottom: 14px;
-`;
+// const CardContainer = styled.div`
+//     display: grid;
+//     gap: 24px;
+//     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//     transition: ease all 0.5ms;
+//     margin-bottom: 14px;
+// `;
 
 const SectionContainer = styled.div`
     transition: ease all 0.5ms;

@@ -8,17 +8,17 @@ import { WrapperCircle } from './base/globalstyle.styled';
 import ProfileImage from '../assets/images/profileImage.png';
 
 const Sidebar = props => {
-    const { sidebarDrawer, isOpen } = props;
+    const { sidebarRef, isOpen } = props;
     const [activeIcon, setActiveIcon] = useState(navItems[0].title);
     const history = useHistory();
 
-    const getRigthLink = item => {
+    const getRightLink = item => {
         setActiveIcon(item.title);
         history.push(item.route);
     };
 
     return (
-        <Wrapper className={`${isOpen ? 't-hidden' : 'lg:t-block'}`} ref={sidebarDrawer}>
+        <aside className={`aside ${isOpen ? 'open' : ''}`} ref={sidebarRef}>
             <LogoContainer>
                 <Logo>
                     <img src={WemaLogo} alt="logo" />
@@ -29,7 +29,7 @@ const Sidebar = props => {
                 {navItems.map((item, index) => (
                     <NavItem
                         key={index}
-                        onClick={() => getRigthLink(item)}
+                        onClick={() => getRightLink(item)}
                         style={{
                             background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)',
                             borderRight: item.title === activeIcon && '4px solid #fff',
@@ -49,24 +49,34 @@ const Sidebar = props => {
                     </LoginUser>
                 </LoginUserHolder>
             </NavItemsContainer>
-        </Wrapper>
+        </aside>
     );
 };
 
 export default Sidebar;
 
-const Wrapper = styled.div`
-    height: calc(100vh);
-    width: calc(20rem - 16px - 16px);
-    padding: 0 1rem;
-    background: #990d81;
-    transition: ease all 0.5s;
-    /* @media (max-width: 768px) {
-        width: 0rem;
-        padding: 0;
-        transition: ease all 0.5s;
-    } */
-`;
+// const Wrapper = styled.div`
+//     height: calc(100vh);
+//     width: calc(20rem - 16px - 16px);
+//     padding: 0 1rem;
+//     background: #990d81;
+//     transition: ease all 0.5s;
+//     /* @media (max-width: 768px) {
+//         width: 0rem;
+//         padding: 0;
+//         transition: ease all 0.5s;
+//     } */
+//     @media (max-width: 449px) {
+//         transform: translateX(-16rem);
+//         width: 0;
+//         padding: 0;
+//         transition: ease all 0.5s;
+//     }
+//     &.open {
+//         transform: translateX(0);
+//         transition: ease all 0.6s;
+//     }
+// `;
 
 const LogoContainer = styled.div`
     padding: 1.5rem 0;

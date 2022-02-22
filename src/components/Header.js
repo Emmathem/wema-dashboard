@@ -19,18 +19,18 @@ const Header = props => {
                 Dashboard
             </Title>
             <RightNavItems>
-                <SearchInput>
+                <SearchInput className="t-hidden lg:t-block">
                     <SearchInputIcon>
                         <FiSearch />
                     </SearchInputIcon>
                     <input className="input-search" placeholder="Enter Keyboards..." />
                 </SearchInput>
-                <SelectContainer>
+                <SelectContainer className="t-hidden lg:t-block">
                     <Select style={{ width: '70px', height: '40px' }} defaultValue="EN" size="large">
                         <Option value="en">EN</Option>
                     </Select>
                 </SelectContainer>
-                <WrapperCircle>
+                <WrapperCircle className="t-hidden lg:t-block">
                     <BsFillSunFill />
                 </WrapperCircle>
                 <WrapperCircle>
@@ -47,9 +47,10 @@ const Header = props => {
 export default Header;
 
 const Wrapper = styled.div`
-    width: calc(100% - 0);
+    width: 100%;
     padding: 1rem 1.5rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background: #fff;
     transition: ease all 0.5s;
@@ -62,6 +63,9 @@ const Title = styled.div`
     color: #000;
     display: flex;
     align-items: center;
+    @media (max-width: 449px) {
+        flex: 0 1;
+    }
 `;
 
 const HeaderSvg = styled.div`
@@ -116,6 +120,9 @@ const SearchInput = styled.div`
             outline: none;
             border: none;
         }
+    }
+    @media (max-width: 449px) {
+        display: none;
     }
 `;
 

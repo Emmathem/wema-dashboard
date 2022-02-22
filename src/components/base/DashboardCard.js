@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { formatNumber } from '../../helpers/functions';
+import { Col } from 'antd';
 
 export const DashboardCard = ({ title, count, icon, children }) => {
     return (
-        <CardHolder className="t-bg-white t-rounded-lg">
-            <BaseImage>
-                <img src={icon} alt="icon" />
-            </BaseImage>
-            <CardContent>
-                <h2>{formatNumber(count)}</h2>
-                <h4>{title}</h4>
-                <div>{children}</div>
-            </CardContent>
-        </CardHolder>
+        <Col xs={6} lg={6} xl={6}>
+            <CardHolder className="t-bg-white t-rounded-lg">
+                <BaseImage>
+                    <img src={icon} alt="icon" />
+                </BaseImage>
+                <CardContent>
+                    <h2>{formatNumber(count)}</h2>
+                    <h4>{title}</h4>
+                    <div>{children}</div>
+                </CardContent>
+            </CardHolder>
+        </Col>
     );
 };
 
