@@ -1,8 +1,7 @@
-import Photo1 from '../assets/images/image1.png'
-import Photo2 from '../assets/images/image2.png'
-import Photo3 from '../assets/images/image3.png'
-import Photo4 from '../assets/images/image4.png'
-
+import Photo1 from '../assets/images/image1.png';
+import Photo2 from '../assets/images/image2.png';
+import Photo3 from '../assets/images/image3.png';
+import Photo4 from '../assets/images/image4.png';
 
 export const RecentRequests = [
     {
@@ -12,7 +11,7 @@ export const RecentRequests = [
         type: 'New Agent',
         status: 'Pending',
         date: '23/04/18',
-        photo: Photo1, 
+        photo: Photo1,
     },
     {
         id: '2',
@@ -21,7 +20,7 @@ export const RecentRequests = [
         type: 'New Agent',
         status: 'Pending',
         date: '23/04/18',
-        photo: Photo2, 
+        photo: Photo2,
     },
     {
         id: '3',
@@ -30,7 +29,7 @@ export const RecentRequests = [
         type: 'New Agent',
         status: 'Active',
         date: '23/04/18',
-        photo: Photo3, 
+        photo: Photo3,
     },
     {
         id: '4',
@@ -39,6 +38,6 @@ export const RecentRequests = [
         type: 'New Agent',
         status: 'Active',
         date: '23/04/18',
-        photo: Photo4, 
+        photo: Photo4,
     },
-]
+];

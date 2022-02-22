@@ -1,19 +1,11 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+// eslint-disable-next-line no-unused-vars
 import Chart from 'chart.js/auto';
 
 const DashboardGraph = () => {
-
     const data = {
-        labels: [
-            'Dec',
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun'
-        ],
+        labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [
             {
                 type: 'line',
@@ -21,7 +13,7 @@ const DashboardGraph = () => {
                 lineTension: 0.1,
                 data: [15, 30, 36, 49, 60, 70, 100],
                 borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)'
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
             },
             {
                 type: 'line',
@@ -29,9 +21,9 @@ const DashboardGraph = () => {
                 lineTension: 0.1,
                 data: [10, 23, 30, 37, 50, 90, 100],
                 fill: false,
-                borderColor: 'rgb(54, 162, 235)'
-            }
-        ]
+                borderColor: 'rgb(54, 162, 235)',
+            },
+        ],
     };
 
     // const data = {
@@ -90,15 +82,15 @@ const DashboardGraph = () => {
         plugins: {
             legend: {
                 display: true,
-            }
-        }
-    }
+            },
+        },
+    };
 
     return (
-        <div className='t-py-4 t-px-4'>
-            <Line data={data} options={options} width={400} />
+        <div className="t-py-4 t-px-4">
+            <Line data={data} options={options} width={400} type="line" />
         </div>
-    )
-}
+    );
+};
 
-export default DashboardGraph
+export default DashboardGraph;

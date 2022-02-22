@@ -1,38 +1,56 @@
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
-import Header from './Header'
-import Sidebar from './Sidebar'
+import React, { useState, useRef, useEffect } from 'react';
+import styled from 'styled-components';
+import Header from './Header';
+import Sidebar from './Sidebar';
 import AOS from 'aos';
 
 const MainLayout = ({ children }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const sidebarDrawer = useRef(null);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 600,
-      once: true,
-    });
-  }, []);
+    const openDrawerOnMobile = () => {
+        setIsOpen(!isOpen);
+    };
 
-  return (
-    <Wrapper>
-      <Sidebar />
-      <MainWrapper>
-        <Header />
-        <ChildrenWrapper data-aos="fade-up">
-          {children}
-        </ChildrenWrapper>
-      </MainWrapper>
-    </Wrapper>
-  )
-}
+    useEffect(() => {
+        const drawerEffectClick = e => {
+            if (sidebarDrawer.current !== null && !sidebarDrawer.current.contains(e.target)) {
+                setIsOpen(!isOpen);
+            }
+        };
+        if (setIsOpen) {
+            window.addEventListener('click', drawerEffectClick);
+        }
+        return () => {
+            window.removeEventListener('click', drawerEffectClick);
+        };
+    }, [setIsOpen]);
 
-export default MainLayout
+    useEffect(() => {
+        AOS.init({
+            duration: 600,
+            once: true,
+        });
+    }, []);
+
+    return (
+        <Wrapper>
+            <Sidebar isOpen={isOpen} openDrawerOnMobile={openDrawerOnMobile} sidebarDrawer={sidebarDrawer} />
+            <MainWrapper>
+                <Header openDrawer={openDrawerOnMobile} />
+                <ChildrenWrapper data-aos="fade-up">{children}</ChildrenWrapper>
+            </MainWrapper>
+        </Wrapper>
+    );
+};
+
+export default MainLayout;
 
 const MainWrapper = styled.div`
-  background: #E5E5E5;
-  flex: 1;
-  transition: ease all 0.5s;
-`
+    background: #e5e5e5;
+    flex: 1;
+    transition: ease all 0.5s;
+`;
 
 const Wrapper = styled.div`
     width: 100vw;

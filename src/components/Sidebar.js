@@ -5,19 +5,20 @@ import styled from 'styled-components';
 import WemaLogo from '../assets/images/wema-logo.svg';
 import { navItems } from '../static/navItems';
 import { WrapperCircle } from './base/globalstyle.styled';
-import ProfileImage from '../assets/images/profileImage.png'
+import ProfileImage from '../assets/images/profileImage.png';
 
-const Sidebar = () => {
+const Sidebar = props => {
+    const { sidebarDrawer, isOpen } = props;
     const [activeIcon, setActiveIcon] = useState(navItems[0].title);
     const history = useHistory();
 
-    const getRigthLink = (item) => {
+    const getRigthLink = item => {
         setActiveIcon(item.title);
         history.push(item.route);
-    }
+    };
 
     return (
-        <Wrapper className='t-hidden lg:t-block transition'>
+        <Wrapper className={`${isOpen ? 't-hidden' : 'lg:t-block'}`} ref={sidebarDrawer}>
             <LogoContainer>
                 <Logo>
                     <img src={WemaLogo} alt="logo" />
@@ -26,10 +27,15 @@ const Sidebar = () => {
             </LogoContainer>
             <NavItemsContainer>
                 {navItems.map((item, index) => (
-                    <NavItem key={index} onClick={() => getRigthLink(item)} style={{ background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)', borderRight: item.title === activeIcon && '4px solid #fff' }}>
-                        <NavIcon>
-                            {item.icon}
-                        </NavIcon>
+                    <NavItem
+                        key={index}
+                        onClick={() => getRigthLink(item)}
+                        style={{
+                            background: item.title === activeIcon && 'rgba(255, 255, 255, 0.1)',
+                            borderRight: item.title === activeIcon && '4px solid #fff',
+                        }}
+                    >
+                        <NavIcon>{item.icon}</NavIcon>
                         <NavTitle>{item.title}</NavTitle>
                     </NavItem>
                 ))}
@@ -38,7 +44,7 @@ const Sidebar = () => {
                         <img src={ProfileImage} alt="profile" />
                     </WrapperCircle>
                     <LoginUser>
-                        <h3 className='t-text-white t-font-extrabold t-text-xl'>Nafisa Sh.</h3>
+                        <h3 className="t-text-white t-font-extrabold t-text-xl">Nafisa Sh.</h3>
                         <span>Support manager</span>
                     </LoginUser>
                 </LoginUserHolder>
@@ -52,8 +58,8 @@ export default Sidebar;
 const Wrapper = styled.div`
     height: calc(100vh);
     width: calc(20rem - 16px - 16px);
-    padding:  0 1rem;
-    background: #990D81;
+    padding: 0 1rem;
+    background: #990d81;
     transition: ease all 0.5s;
     /* @media (max-width: 768px) {
         width: 0rem;
@@ -98,7 +104,7 @@ const NavIcon = styled.div`
     margin: 0.1rem;
     display: grid;
     place-items: center;
-`
+`;
 
 const NavTitle = styled.div``;
 
@@ -118,7 +124,7 @@ const LoginUserHolder = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
     border-radius: 4px;
-`
+`;
 
 const LoginUser = styled.div`
     margin-right: 14px;
