@@ -52,7 +52,6 @@ const HeaderWrapper = styled.div`
     z-index: 1;
     padding: 1rem 1.5rem;
     display: flex;
-    //flex-wrap: wrap;
     align-items: center;
     background: #fff;
     transition: ease all 0.5s;

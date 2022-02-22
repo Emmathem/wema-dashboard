@@ -57,20 +57,14 @@ const MainWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-    //width: 100vw;
     height: 100vh;
-    //background-color: #0a0b0d;
     color: white;
-    //display: flex;
-    //overflow: hidden;
 `;
 
 const ChildrenWrapper = styled.div`
     padding: 6.8rem 2rem 1.5rem;
     transition: ease all 0.5s;
     max-height: 100%;
-    //overflow: hidden;
-    //overflow-y: scroll;
     ::-webkit-scrollbar {
         display: none;
     }

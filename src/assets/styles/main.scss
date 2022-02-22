@@ -1,104 +1,15 @@
 // all styles
 :root {
   --default-wema-color: #990d81;
-  //--hr-blue-deep: #0190e5;
-  //--plan-blue: #045789;
-  //--white-color: #fff;
+  --white-color: #fff;
 }
 
 @import 'antd/dist/antd.css';
-// @import 'react-toastify/dist/ReactToastify.css';
- @import "src/assets/styles/aside";
+@import "src/assets/styles/aside";
 @import 'aos/dist/aos.css';
 
-.loader:empty {
-  position: absolute;
-  top: calc(50% - 4em);
-  left: calc(50% - 4em);
-  width: 6em;
-  height: 6em;
-  border: 1.1em solid rgba(0, 0, 0, 0.2);
-  border-left: 1.1em solid #000000;
-  border-radius: 50%;
-  animation: load8 1.1s infinite linear;
-}
-.h-37 {
-  height: 37px;
-}
-.temcolor {
-  color: var(--hr-blue);
-}
-.loader--hide {
-  opacity: 0;
-}
 .sidebar {
   overflow-y: auto;
-}
-
-.pphoto {
-  width: 170px;
-  height: 170px;
-  border: 1px solid var(--hr-blue);
-  overflow: hidden;
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-  margin: 10px auto 2rem;
-  img {
-    width: inherit;
-    height: inherit;
-    object-fit: contain;
-  }
-  span {
-    position: absolute;
-    bottom: 0;
-    padding: 3px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    background: var(--hr-blue);
-    color: #fff;
-  }
-  input[type='file'] {
-    //line-height: 25px;
-    //font-size: 1.1em;
-    position: absolute;
-    opacity: 0;
-    z-index: 10;
-  }
-}
-
-.avatar > img {
-  border-radius: 50%;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  object-fit: contain;
-  height: inherit;
-}
-.openside{
-  margin-left: 0 !important;
-}
-
-@keyframes load8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.to_cap {
-  text-transform: capitalize;
-}
-.loading {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 70%;
-  margin: 8rem auto;
 }
 
 .hide-upload-tips {

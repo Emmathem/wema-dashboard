@@ -38,58 +38,6 @@ const DashboardGraph = () => {
         ],
     };
 
-    // const data = {
-    //     labels: [
-    //         'Dec',
-    //         'Jan',
-    //         'Feb',
-    //         'Mar',
-    //         'Apr',
-    //         'May',
-    //         'Jun',
-    //     ],
-    //     datasets: [
-    //         {
-    //             fill: false,
-    //             lineTension: 0.1,
-    //             backgroundColor: '#3773f5',
-    //             borderColor: '#3773f5',
-    //             borderCapStyle: 'butt',
-    //             borderDash: [],
-    //             borderDashOffset: 0.0,
-    //             borderJoinStyle: 'mitter',
-    //             pointBorderColor: '#3773f5',
-    //             pointBackgroundColor: '#3773f5',
-    //             pointBorderWidth: 1,
-    //             pointHoverRadius: 5,
-    //             pointHoverBackgroundColor: '#3773f5',
-    //             pointHoverBorderColor: '#3773f5',
-    //             pointRadius: 1,
-    //             pointHitRadius: 10,
-    //             data: [65, 59, 80, 81, 56, 72, 45, 67, 55, 42],
-    //         },
-    //         {
-    //             fill: false,
-    //             lineTension: 0.1,
-    //             backgroundColor: '#3773f5',
-    //             borderColor: '#3773f5',
-    //             borderCapStyle: 'butt',
-    //             borderDash: [],
-    //             borderDashOffset: 0.0,
-    //             borderJoinStyle: 'mitter',
-    //             pointBorderColor: '#3773f5',
-    //             pointBackgroundColor: '#3773f5',
-    //             pointBorderWidth: 1,
-    //             pointHoverRadius: 5,
-    //             pointHoverBackgroundColor: '#3773f5',
-    //             pointHoverBorderColor: '#3773f5',
-    //             pointRadius: 1,
-    //             pointHitRadius: 10,
-    //             data: [65, 59, 80, 81, 56, 72, 45, 67, 55, 42],
-    //         }
-    //     ],
-    // }
-
     return (
         <div className="t-py-4 t-px-4">
             <Line
