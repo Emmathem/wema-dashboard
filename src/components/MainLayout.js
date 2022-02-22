@@ -62,7 +62,7 @@ const Wrapper = styled.div`
     height: 100vh;
     //background-color: #0a0b0d;
     color: white;
-    display: flex;
+    //display: flex;
     //overflow: hidden;
 `;
 

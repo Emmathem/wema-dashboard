@@ -11,7 +11,7 @@ const { Option } = Select;
 
 const Header = props => {
     return (
-        <Wrapper>
+        <HeaderWrapper>
             <Title>
                 <HeaderSvg onClick={props.openDrawer}>
                     <img src={WemaLogo} alt="logo" />
@@ -40,17 +40,17 @@ const Header = props => {
                     <img src={ProfileImage} alt="profile" />
                 </WrapperCircle>
             </RightNavItems>
-        </Wrapper>
+        </HeaderWrapper>
     );
 };
 
 export default Header;
 
-const Wrapper = styled.div`
+const HeaderWrapper = styled.div`
     width: 100%;
     padding: 1rem 1.5rem;
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     align-items: center;
     background: #fff;
     transition: ease all 0.5s;

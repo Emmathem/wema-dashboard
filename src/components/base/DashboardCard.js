@@ -5,7 +5,7 @@ import { Col } from 'antd';
 
 export const DashboardCard = ({ title, count, icon, children }) => {
     return (
-        <Col xs={6} lg={6} xl={6}>
+        <Col xs={24} lg={6} xl={6}>
             <CardHolder className="t-bg-white t-rounded-lg">
                 <BaseImage>
                     <img src={icon} alt="icon" />
@@ -31,6 +31,7 @@ const CardHolder = styled.div`
     color: #000;
     height: auto;
     transition: ease all 0.5s;
+    margin-bottom: 1rem;
 `;
 
 const BaseImage = styled.div``;
