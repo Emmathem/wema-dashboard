@@ -52,8 +52,4 @@ const ChildrenWrapper = styled.div`
     ::-webkit-scrollbar {
         display: none;
     }
-
-    & div {
-        border-radius: 0.4rem;
-    }
 `;

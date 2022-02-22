@@ -6,17 +6,43 @@ import DashboardGraph from './base/DashboardGraph';
 import DashboardTableRecord from './base/DashboardTableRecord';
 import MainLayout from './MainLayout'
 import { Col, Row } from 'antd';
-import { FaUsers } from 'react-icons/fa'
+import { AiOutlineFall, AiOutlineRise } from 'react-icons/ai';
+import ApproveIcon from '../assets/images/icons/ApproveIcon.svg';
+import PendingIcon from '../assets/images/icons/PendingIcon.svg';
+import TotalIcon from '../assets/images/icons/TotalIcon.svg';
+import UsersIcon from '../assets/images/icons/UsersIcon.svg';
+
 
 const Dashboard = () => {
   return (
     <>
       <MainLayout>
         <CardContainer>
-          <DashboardCard background={'#2F49D1'} title='Pending Requests' count='948494' />
-          <DashboardCard background={'#FFB648'} title='Approved Requests' count='948494' />
-          <DashboardCard background={'#5F2EEA'} title='Total Agents' count='948494' />
-          <DashboardCard background={'#5f2eea2e'} title='Total Users' count='948494' icon={<FaUsers />} />
+          <DashboardCard background={'#2F49D1'} title='Pending Requests' count='948494' icon={PendingIcon}>
+            <CardFooter>
+              <span className='rise'><AiOutlineRise /> 4.27%</span>
+              <span>Last month</span>
+            </CardFooter>
+          </DashboardCard>
+          <DashboardCard background={'#FFB648'} title='Approved Requests' count='948494' icon={ApproveIcon}>
+            <CardFooter>
+              <span className='rise'><AiOutlineRise /> 0.24%</span>
+              <span>Last month</span>
+            </CardFooter>
+          </DashboardCard>
+          <DashboardCard background={'#5F2EEA'} title='Total Agents' count='948494' icon={TotalIcon}>
+            <CardFooter>
+              <span className='fall'>
+                <AiOutlineFall /> 1.64%</span>
+              <span>Last month</span>
+            </CardFooter>
+          </DashboardCard>
+          <DashboardCard background={'#5f2eea2e'} title='Total Users' count='948494' icon={UsersIcon}>
+            <CardFooter>
+              <span className='fall'><AiOutlineFall /> 0.00%</span>
+              <span>Last month</span>
+            </CardFooter>
+          </DashboardCard>
         </CardContainer>
         <Row gutter={24}>
           <Col xs={24} lg={18} xl={18}>
@@ -75,4 +101,23 @@ const SectionTitle = styled.div`
   color: #000;
   margin-bottom: 15px;
   padding: 5px 15px;
+`
+
+const CardFooter = styled.div`
+  display: flex;
+  align-items: center;
+  svg {
+    padding-right: 5px;
+    font-size: 1.2rem;
+  }
+  span {
+    padding-left: 5px;
+    display: flex;
+  }
+  .rise {
+    color: #4BDE97;
+  }
+  .fall {
+    color: #F26464;
+  }
 `
