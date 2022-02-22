@@ -47,7 +47,9 @@ const Header = props => {
 export default Header;
 
 const HeaderWrapper = styled.div`
-    width: 100%;
+    width: calc(100% - 18rem);
+    position: fixed;
+    z-index: 1;
     padding: 1rem 1.5rem;
     display: flex;
     //flex-wrap: wrap;

@@ -66,7 +66,7 @@ const Wrapper = styled.div`
 `;
 
 const ChildrenWrapper = styled.div`
-    padding: 1.5rem 2rem;
+    padding: 6.8rem 2rem 1.5rem;
     transition: ease all 0.5s;
     max-height: 100%;
     //overflow: hidden;

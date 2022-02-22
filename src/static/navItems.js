@@ -1,10 +1,9 @@
-import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { HiHome } from 'react-icons/hi';
 import { RiCoinsLine } from 'react-icons/ri';
-import { MdWeb } from 'react-icons/md';
+import { MdArticle } from 'react-icons/md';
 import { FiSettings } from 'react-icons/fi';
 import { FaUsers } from 'react-icons/fa';
-import { BsFillChatLeftDotsFill } from 'react-icons/bs';
+import { BsFillChatLeftDotsFill, BsFillDashSquareFill } from 'react-icons/bs';
 
 export const navItems = [
     {
@@ -28,13 +27,13 @@ export const navItems = [
     {
         title: 'Reports',
         route: '/',
-        icon: <MdWeb />,
+        icon: <MdArticle />,
         children: [],
     },
     {
         title: 'Audit Trail',
         route: '/',
-        icon: <AiOutlinePlusCircle />,
+        icon: <BsFillDashSquareFill />,
         children: [
             {
                 title: 'Trail',
