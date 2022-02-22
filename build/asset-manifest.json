@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c080dad4.css",
-    "main.js": "/static/js/main.2fa92945.js",
+    "main.js": "/static/js/main.0b7d9be5.js",
     "static/js/787.3255cf9a.chunk.js": "/static/js/787.3255cf9a.chunk.js",
     "static/media/wema-logo.svg": "/static/media/wema-logo.ac0436e3611fd9fdc1bbc5864401b7b4.svg",
     "static/media/PendingIcon.svg": "/static/media/PendingIcon.c78dc3ccfc98115f1adc3331037a94bc.svg",
@@ -10,11 +10,11 @@
     "index.html": "/index.html",
     "static/media/ApproveIcon.svg": "/static/media/ApproveIcon.261b654ec3782ee6cc219459dcc65f51.svg",
     "main.c080dad4.css.map": "/static/css/main.c080dad4.css.map",
-    "main.2fa92945.js.map": "/static/js/main.2fa92945.js.map",
+    "main.0b7d9be5.js.map": "/static/js/main.0b7d9be5.js.map",
     "787.3255cf9a.chunk.js.map": "/static/js/787.3255cf9a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c080dad4.css",
-    "static/js/main.2fa92945.js"
+    "static/js/main.0b7d9be5.js"
   ]
 }

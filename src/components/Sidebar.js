@@ -6,9 +6,10 @@ import WemaLogo from '../assets/images/wema-logo.svg';
 import { navItems } from '../static/navItems';
 import { WrapperCircle } from './base/globalstyle.styled';
 import ProfileImage from '../assets/images/profileImage.png';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 const Sidebar = props => {
-    const { sidebarRef, isOpen } = props;
+    const { sidebarRef, isOpen, closeDrawer } = props;
     const [activeIcon, setActiveIcon] = useState(navItems[0].title);
     const history = useHistory();
 
@@ -19,6 +20,9 @@ const Sidebar = props => {
 
     return (
         <aside className={`aside ${isOpen ? 'open' : ''}`} ref={sidebarRef}>
+            <div onClick={closeDrawer} className="closedrawer" data-aos="fade-left" data-aos-delay="1500">
+                <AiFillCloseCircle />
+            </div>
             <LogoContainer>
                 <Logo>
                     <img src={WemaLogo} alt="logo" />
@@ -134,6 +138,7 @@ const LoginUserHolder = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
     border-radius: 4px;
+    overflow: hidden;
 `;
 
 const LoginUser = styled.div`

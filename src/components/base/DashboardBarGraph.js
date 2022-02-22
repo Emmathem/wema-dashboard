@@ -11,11 +11,11 @@ const DashboardBarGraph = () => {
                 label: '',
                 backgroundColor: 'rgb(255,255,255)',
                 color: '#fff',
-                width: '15px',
+                width: '10px',
                 borderWidth: 0,
                 borderRadius: '10',
-                maxBarThickness: '14',
-                data: [300, 609, 700, 900, 1100],
+                maxBarThickness: '12',
+                data: [900, 600, 400, 1100, 800],
             },
         ],
     };
@@ -25,18 +25,30 @@ const DashboardBarGraph = () => {
             <Bar
                 data={data}
                 options={{
-                    // title: {
-                    //   display: true,
-                    //   text: 'Average Rainfall per month',
-                    //   fontSize: 20,
-                    //   color: '#fff',
-                    // },
-                    label: {
-                        display: false,
-                    },
-                    legend: {
-                        display: false,
-                        position: 'right',
+                    // maintainAspectRatio: false,
+                    scales: {
+                        yAxes: {
+                            grid: {
+                                drawBorder: false,
+                                color: 'rgba(255, 255, 255, 0.1)',
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                color: 'white',
+                                fontSize: 12,
+                            },
+                        },
+                        xAxes: {
+                            grid: {
+                                drawBorder: false,
+                                color: 'rgba(255, 255, 255, 0.1)',
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                color: 'white',
+                                fontSize: 12,
+                            },
+                        },
                     },
                     aspectRatio: 1,
                 }}

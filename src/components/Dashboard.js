@@ -83,8 +83,6 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-// export const DashboardWrapper = styled.div``
-
 // const CardContainer = styled.div`
 //     display: grid;
 //     gap: 24px;

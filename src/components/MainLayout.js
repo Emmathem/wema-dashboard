@@ -9,7 +9,6 @@ const MainLayout = ({ children }) => {
     const sidebarRef = useRef(null);
 
     const openDrawerOnMobile = () => {
-        console.log(isOpen);
         setIsOpen(!isOpen);
     };
 
@@ -36,7 +35,7 @@ const MainLayout = ({ children }) => {
 
     return (
         <Wrapper>
-            <Sidebar isOpen={isOpen} openDrawerOnMobile={openDrawerOnMobile} sidebarRef={sidebarRef} />
+            <Sidebar isOpen={isOpen} closeDrawer={openDrawerOnMobile} sidebarRef={sidebarRef} />
             <MainWrapper>
                 <Header openDrawer={openDrawerOnMobile} />
                 <ChildrenWrapper data-aos="fade-up">{children}</ChildrenWrapper>
@@ -69,7 +68,7 @@ const Wrapper = styled.div`
 const ChildrenWrapper = styled.div`
     padding: 1.5rem 2rem;
     transition: ease all 0.5s;
-    max-height: calc(100vh - 64px);
+    max-height: 100%;
     //overflow: hidden;
     //overflow-y: scroll;
     ::-webkit-scrollbar {
