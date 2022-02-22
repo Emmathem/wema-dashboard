@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
@@ -7,6 +6,7 @@ import { navItems } from '../static/navItems';
 import { WrapperCircle } from './base/globalstyle.styled';
 import ProfileImage from '../assets/images/profileImage.png';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { HiOutlineChevronDown } from 'react-icons/hi';
 
 const Sidebar = props => {
     const { sidebarRef, isOpen, closeDrawer } = props;
@@ -39,8 +39,15 @@ const Sidebar = props => {
                             borderRight: item.title === activeIcon && '4px solid #fff',
                         }}
                     >
-                        <NavIcon>{item.icon}</NavIcon>
-                        <NavTitle>{item.title}</NavTitle>
+                        <div className="t-flex t-items-center">
+                            <NavIcon>{item.icon}</NavIcon>
+                            <NavTitle>{item.title}</NavTitle>
+                        </div>
+                        {item.children.length > 0 && (
+                            <SideIcon>
+                                <HiOutlineChevronDown />
+                            </SideIcon>
+                        )}
                     </NavItem>
                 ))}
                 <LoginUserHolder>
@@ -59,29 +66,6 @@ const Sidebar = props => {
 
 export default Sidebar;
 
-// const Wrapper = styled.div`
-//     height: calc(100vh);
-//     width: calc(20rem - 16px - 16px);
-//     padding: 0 1rem;
-//     background: #990d81;
-//     transition: ease all 0.5s;
-//     /* @media (max-width: 768px) {
-//         width: 0rem;
-//         padding: 0;
-//         transition: ease all 0.5s;
-//     } */
-//     @media (max-width: 449px) {
-//         transform: translateX(-16rem);
-//         width: 0;
-//         padding: 0;
-//         transition: ease all 0.5s;
-//     }
-//     &.open {
-//         transform: translateX(0);
-//         transition: ease all 0.6s;
-//     }
-// `;
-
 const LogoContainer = styled.div`
     padding: 1.5rem 0;
 `;
@@ -97,6 +81,7 @@ const NavItemsContainer = styled.div`
 const NavItem = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-size: 1.1rem;
     font-weight: 500;
     border-radius: 0.5rem;
@@ -118,6 +103,21 @@ const NavIcon = styled.div`
     margin: 0.1rem;
     display: grid;
     place-items: center;
+`;
+
+const SideIcon = styled.div`
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.6);
+    svg {
+        font-size: 14px;
+        fill: #fff;
+        stroke: #fff;
+    }
 `;
 
 const NavTitle = styled.div``;

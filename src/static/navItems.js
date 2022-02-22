@@ -35,7 +35,13 @@ export const navItems = [
         title: 'Audit Trail',
         route: '/',
         icon: <AiOutlinePlusCircle />,
-        children: [],
+        children: [
+            {
+                title: 'Trail',
+                route: '/',
+                icon: '',
+            },
+        ],
     },
     {
         title: 'Users',

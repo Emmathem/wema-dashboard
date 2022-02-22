@@ -17,7 +17,7 @@ const Dashboard = () => {
         <>
             <MainLayout>
                 <Row gutter={24} className="t-mb-4">
-                    <DashboardCard background={'#2F49D1'} title="Pending Requests" count="948494" icon={PendingIcon}>
+                    <DashboardCard background={'#2F49D1'} title="Pending Requests" count="1478286" icon={PendingIcon}>
                         <CardFooter>
                             <span className="rise">
                                 <AiOutlineRise /> 4.27%
@@ -25,7 +25,7 @@ const Dashboard = () => {
                             <span>Last month</span>
                         </CardFooter>
                     </DashboardCard>
-                    <DashboardCard background={'#FFB648'} title="Approved Requests" count="948494" icon={ApproveIcon}>
+                    <DashboardCard background={'#FFB648'} title="Approved Requests" count="478520" icon={ApproveIcon}>
                         <CardFooter>
                             <span className="rise">
                                 <AiOutlineRise /> 0.24%
@@ -33,7 +33,7 @@ const Dashboard = () => {
                             <span>Last month</span>
                         </CardFooter>
                     </DashboardCard>
-                    <DashboardCard background={'#5F2EEA'} title="Total Agents" count="948494" icon={TotalIcon}>
+                    <DashboardCard background={'#5F2EEA'} title="Total Agents" count="154872" icon={TotalIcon}>
                         <CardFooter>
                             <span className="fall">
                                 <AiOutlineFall /> 1.64%
@@ -41,9 +41,9 @@ const Dashboard = () => {
                             <span>Last month</span>
                         </CardFooter>
                     </DashboardCard>
-                    <DashboardCard background={'#5f2eea2e'} title="Total Users" count="948494" icon={UsersIcon}>
+                    <DashboardCard background={'#5f2eea2e'} title="Total Users" count="167" icon={UsersIcon}>
                         <CardFooter>
-                            <span className="fall">
+                            <span className="warn">
                                 <AiOutlineFall /> 0.00%
                             </span>
                             <span>Last month</span>
@@ -123,5 +123,8 @@ const CardFooter = styled.div`
     }
     .fall {
         color: #f26464;
+    }
+    .warn {
+        color: #ffb648;
     }
 `;

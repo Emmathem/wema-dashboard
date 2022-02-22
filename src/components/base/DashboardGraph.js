@@ -10,11 +10,11 @@ const DashboardGraph = () => {
             {
                 type: 'line',
                 label: 'AGENTS',
-                lineTension: 0.1,
-                data: [15, 30, 36, 49, 60, 70, 100],
-                borderColor: 'rgb(255, 99, 132)',
+                lineTension: 0.6,
+                data: [27, 50, 23, 59, 39, 40, 25],
+                borderColor: '#5F2EEA',
                 borderCapStyle: 'butt',
-                borderDashOffset: 0.0,
+                borderDashOffset: 0.4,
                 borderJoinStyle: 'mitter',
                 pointRadius: 1,
                 pointHoverRadius: 5,
@@ -24,14 +24,14 @@ const DashboardGraph = () => {
             {
                 type: 'line',
                 label: 'USERS',
-                lineTension: 0.1,
-                data: [10, 23, 30, 37, 50, 90, 100],
+                lineTension: 0.6,
+                data: [25, 20, 26, 37, 50, 90, 50],
                 fill: false,
-                borderDashOffset: 0.0,
+                borderDashOffset: 0.4,
                 pointRadius: 1,
                 borderCapStyle: 'butt',
                 borderJoinStyle: 'mitter',
-                borderColor: 'rgb(54, 162, 235)',
+                borderColor: '#4BDE97',
                 pointBackgroundColor: '#3773f5',
                 pointHoverRadius: 5,
             },
@@ -95,18 +95,43 @@ const DashboardGraph = () => {
             <Line
                 data={data}
                 options={{
-                    // title: {
-                    //   display: true,
-                    //   text: 'Average Rainfall per month',
-                    //   fontSize: 20,
-                    //   color: '#fff',
-                    // },
+                    title: {
+                        display: false,
+                    },
                     label: {
                         display: false,
                     },
                     legend: {
-                        display: true,
+                        display: false,
                         position: 'right',
+                    },
+                    scales: {
+                        yAxes: {
+                            grid: {
+                                drawBorder: false,
+                                color: 'rgba(255, 255, 255, 0.1)',
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#000',
+                                fontSize: 12,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'probability',
+                            },
+                        },
+                        xAxes: {
+                            grid: {
+                                drawBorder: false,
+                                color: '#ccc',
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#000',
+                                fontSize: 12,
+                            },
+                        },
                     },
                     // aspectRatio: 1,
                 }}
