@@ -56,6 +56,9 @@ const HeaderWrapper = styled.div`
     align-items: center;
     background: #fff;
     transition: ease all 0.5s;
+    @media (max-width: 449px) {
+        width: 100%;
+    }
 `;
 
 const Title = styled.div`
