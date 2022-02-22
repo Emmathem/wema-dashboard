@@ -13,8 +13,10 @@ const DashboardBarGraph = () => {
         label: 'Rainfall',
         backgroundColor: 'rgb(255,255,255)',
         color: '#fff',
+        width: '15px',
         borderWidth: 0,
-        borderRadius: '2px',
+        borderRadius: '10',
+        maxBarThickness: '14',
         data: [300, 609, 700, 900, 1100]
       }
     ]

@@ -6,6 +6,7 @@ import DashboardGraph from './base/DashboardGraph';
 import DashboardTableRecord from './base/DashboardTableRecord';
 import MainLayout from './MainLayout'
 import { Col, Row } from 'antd';
+import { FaUsers } from 'react-icons/fa'
 
 const Dashboard = () => {
   return (
@@ -15,7 +16,7 @@ const Dashboard = () => {
           <DashboardCard background={'#2F49D1'} title='Pending Requests' count='948494' />
           <DashboardCard background={'#FFB648'} title='Approved Requests' count='948494' />
           <DashboardCard background={'#5F2EEA'} title='Total Agents' count='948494' />
-          <DashboardCard background={'#4BDE97'} title='Total Users' count='948494' />
+          <DashboardCard background={'#5f2eea2e'} title='Total Users' count='948494' icon={<FaUsers />} />
         </CardContainer>
         <Row gutter={24}>
           <Col xs={24} lg={18} xl={18}>

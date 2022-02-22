@@ -8,10 +8,10 @@ const MainLayout = ({ children }) => {
 
   useEffect(() => {
     AOS.init({
-        duration: 600,
-        once: true,
+      duration: 600,
+      once: true,
     });
-}, []);
+  }, []);
 
   return (
     <Wrapper>
@@ -44,6 +44,16 @@ const Wrapper = styled.div`
 `;
 
 const ChildrenWrapper = styled.div`
-  padding: 1.5rem 2rem;
-  transition: ease all 0.5s;
+    padding: 1.5rem 2rem;
+    transition: ease all 0.5s;
+    max-height: calc(100vh - 64px);
+    overflow: hidden;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    & div {
+        border-radius: 0.4rem;
+    }
 `;

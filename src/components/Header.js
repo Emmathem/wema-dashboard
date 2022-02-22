@@ -5,6 +5,7 @@ import { HiBell } from 'react-icons/hi';
 import { BsFillSunFill } from 'react-icons/bs';
 import ProfileImage from '../assets/images/profileImage.png'
 import WemaLogo from '../assets/images/wema-logo.svg';
+import { WrapperCircle } from './base/globalstyle.styled';
 import { Select } from 'antd';
 const { Option } = Select;
 const Header = () => {
@@ -114,35 +115,6 @@ const SearchInputIcon = styled.div`
   svg {
     font-size: 2rem;
     stroke: #e5e5e5;
-  }
-`;
-
-const WrapperCircle = styled.div`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: #FAFAFA;
-  overflow: hidden;
-  margin: 0 0.8rem;
-  transition: ease all 0.5s;
-  cursor: pointer;
-  svg {
-    fill: #D6D7E3;
-    font-size: 1.5rem;
-  }
-  img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-  }
-  &:hover {
-    svg {
-      fill: #000;
-      transition: ease all 0.5s;
-    }
   }
 `;
 

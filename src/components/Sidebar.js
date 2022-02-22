@@ -4,6 +4,8 @@ import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import WemaLogo from '../assets/images/wema-logo.svg';
 import { navItems } from '../static/navItems';
+import { WrapperCircle } from './base/globalstyle.styled';
+import ProfileImage from '../assets/images/profileImage.png'
 
 const Sidebar = () => {
     const [activeIcon, setActiveIcon] = useState(navItems[0].title);
@@ -31,6 +33,15 @@ const Sidebar = () => {
                         <NavTitle>{item.title}</NavTitle>
                     </NavItem>
                 ))}
+                <LoginUserHolder>
+                    <WrapperCircle>
+                        <img src={ProfileImage} alt="profile" />
+                    </WrapperCircle>
+                    <LoginUser>
+                        <h3 className='t-text-white t-font-extrabold t-text-xl'>Nafisa Sh.</h3>
+                        <span>Support manager</span>
+                    </LoginUser>
+                </LoginUserHolder>
             </NavItemsContainer>
         </Wrapper>
     );
@@ -57,7 +68,7 @@ const LogoContainer = styled.div`
 
 const NavItemsContainer = styled.div`
     margin-top: 2rem;
-
+    position: relative;
     &:hover {
         cursor: pointer;
     }
@@ -96,4 +107,22 @@ const Logo = styled.div`
     object-fit: contain;
     margin-left: 1.5rem;
     margin: auto;
+`;
+
+const LoginUserHolder = styled.div`
+    position: absolute;
+    bottom: -20rem;
+    padding: 10px 5px;
+    display: flex;
+    transition: ease all 0.5s;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border-radius: 4px;
+`
+
+const LoginUser = styled.div`
+    margin-right: 14px;
+    span {
+        color: rgba(255, 255, 255, 0.5);
+    }
 `;

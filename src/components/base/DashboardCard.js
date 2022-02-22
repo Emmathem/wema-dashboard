@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { BaseCircle } from './globalstyle.styled';
 import { formatNumber } from '../../helpers/functions';
 
-export const DashboardCard = ({ background, title, count }) => {
+export const DashboardCard = ({ background, title, count, icon }) => {
     return (
         <CardHolder className='t-bg-white t-rounded-lg'>
-            <BaseCircle background={background}></BaseCircle>
+            <BaseCircle background={background}>{icon}</BaseCircle>
             <CardContent>
                 <h2>{formatNumber(count)}</h2>
                 <h4>{title}</h4>

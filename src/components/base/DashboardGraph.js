@@ -14,21 +14,24 @@ const DashboardGraph = () => {
             'May',
             'Jun'
         ],
-        datasets: [{
-            type: 'line',
-            label: 'AGENTS',
-            lineTension: 0.1,
-            data: [25, 30, 35, 39, 40, 50],
-            borderColor: 'rgb(255, 99, 132)',
-            backgroundColor: 'rgba(255, 99, 132, 0.2)'
-        }, {
-            type: 'line',
-            label: 'USERS',
-            lineTension: 0.1,
-            data: [10, 20, 30, 35, 40, 50],
-            fill: false,
-            borderColor: 'rgb(54, 162, 235)'
-        }]
+        datasets: [
+            {
+                type: 'line',
+                label: 'AGENTS',
+                lineTension: 0.1,
+                data: [15, 30, 36, 49, 60, 70, 100],
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)'
+            },
+            {
+                type: 'line',
+                label: 'USERS',
+                lineTension: 0.1,
+                data: [10, 23, 30, 37, 50, 90, 100],
+                fill: false,
+                borderColor: 'rgb(54, 162, 235)'
+            }
+        ]
     };
 
     // const data = {
@@ -92,7 +95,7 @@ const DashboardGraph = () => {
     }
 
     return (
-        <div>
+        <div className='t-py-4 t-px-4'>
             <Line data={data} options={options} width={400} />
         </div>
     )
